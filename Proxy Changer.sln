@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy Changer", "Proxy Changer\Proxy Changer.csproj", "{F1E450B7-7527-4257-8EE4-6C596511A8B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1E450B7-7527-4257-8EE4-6C596511A8B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E450B7-7527-4257-8EE4-6C596511A8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E450B7-7527-4257-8EE4-6C596511A8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E450B7-7527-4257-8EE4-6C596511A8B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95A543CD-DDBB-4003-9813-9DCB616A3525}
+	EndGlobalSection
+EndGlobal
