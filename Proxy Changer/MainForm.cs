@@ -2,6 +2,7 @@
 using Proxy_Changer.Connection;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Proxy_Changer {
@@ -86,13 +87,49 @@ namespace Proxy_Changer {
         private void UpdateButtonStatus(bool isProxyEnabled) {
             if (isProxyEnabled) {
                 ProxyBtn.Text = "Disable Proxy";
+                StatusLbl.Text = "Enabled";
             } else {
                 ProxyBtn.Text = "Enable Proxy";
+                StatusLbl.Text = "Disabled";
+                StatusLbl.ForeColor = Color.FromArgb(43, 43, 34);
             }
         }
 
         private void ProxyAddressTb_DoubleClick(object sender, EventArgs e) {
             ProxyAddressTb.ReadOnly = false;
+        }
+
+        private void netModToolStripMenuItem_Click(object sender, EventArgs e) {
+            string netModPath = @"C:\Program Files (x86)\NetMod\NetMod.exe";
+            if (System.IO.File.Exists(netModPath)) {
+                Process.Start(netModPath);
+            } else {
+                MessageBox.Show("NetMod not found! Please install first.", "NetMod Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void NetworkAdupterSettingsToolStripMenuItem_Click(object sender, EventArgs e) {
+            string command = "control ncpa.cpl";
+
+            ProcessStartInfo processStartInfo = new ProcessStartInfo {
+                FileName = "cmd.exe",
+                RedirectStandardInput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            Process process = new Process {
+                StartInfo = processStartInfo
+            };
+
+            process.Start();
+
+            process.StandardInput.WriteLine(command);
+            process.StandardInput.Flush();
+            process.StandardInput.Close();
+
+            process.WaitForExit();
+            process.Close();
         }
     }
 }
